@@ -143,14 +143,16 @@ with(data2,table(DoW,Weekend))
 
 2. Make a panel plot containing time series of the average steps by weekday and weekend.
 
+Sorry, I haven't figured out how to get this to be the averages instead of all of the observations!
 
 
 ```r
-# intervalsteps<-with(mapply(data2$steps,data$interval,mean,na.rm=T)
-# intervals<-unique(data$interval)
-# plot(intervals,intervalsteps,type="l",xlab="Beginning of 5 Minute Interval",
-#      ylab="Average Number of Steps")
+library(lattice)
+
+xyplot(steps~interval|Weekend,layout=c(1,2),data=data2,type="l")
 ```
+
+![](PA1_template_files/figure-html/unnamed-chunk-6-1.png) 
 
 
 
